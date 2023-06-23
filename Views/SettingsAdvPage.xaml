@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns:txt="clr-namespace:LocalizationResourceManager.Maui;assembly=LocalizationResourceManager.Maui"
+    Title="{txt:Translate Settings}"
+    x:Class="TestApp.Views.SettingsAdvPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:TestApp.ViewModels"
+    xmlns:local="clr-namespace:TestApp.Views"
+    x:DataType="vm:SettingsAdvViewModel"
+    mc:Ignorable="d">
+    <ContentPage.BindingContext>
+        <vm:SettingsAdvViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="LightPink"
+                     Margin="{x:OnPlatform iOS='0,40,0,0', Android='0'}" >
+            <Label
+                HorizontalOptions="Center"
+                Text="Test App General Settings Page"
+                TextColor="Black"
+                VerticalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

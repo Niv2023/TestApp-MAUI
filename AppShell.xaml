@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="TestApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:txt="clr-namespace:LocalizationResourceManager.Maui;assembly=LocalizationResourceManager.Maui"
+    xmlns:local="clr-namespace:TestApp"
+    xmlns:views="clr-namespace:TestApp.Views"
+    xmlns:vm="clr-namespace:TestApp.ViewModels"
+    Shell.FlyoutBehavior="Flyout">
+
+    <Shell.BindingContext>
+        <vm:SettingsGenViewModel />
+    </Shell.BindingContext>
+
+    <FlyoutItem Title="{txt:Translate MainPage}">
+        <ShellContent Route="MainPage"  Title="Main Page"
+        ContentTemplate="{DataTemplate views:MainPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="{txt:Translate Settings}">
+        <Tab>
+            <ShellContent Title="{txt:Translate General}"
+                          Route="SettingsGenPage"
+                          ContentTemplate="{DataTemplate views:SettingsGenPage}" />
+
+
+            <ShellContent Title="{txt:Translate Advanced}"
+                          Route="SettingsAdvPage"
+                          ContentTemplate="{DataTemplate views:SettingsAdvPage}" />
+        </Tab>
+
+    </FlyoutItem>
+</Shell>
